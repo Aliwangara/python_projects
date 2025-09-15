@@ -8,7 +8,7 @@ def main():
     expense = get_user_expense()
     
 
-    save_user_expense(expense, expense_file_Path)
+    save_user_expense(expense, expense_file_path)
 
     summarize_expense(expense_file_path)
 
@@ -47,10 +47,25 @@ def get_user_expense():
 
 
 
-def save_user_expense(expense,expense_file_Path):
-        print(f"saving user expense: {expense} to {expense_file_Path}")
+def save_user_expense(expense:Expense ,expense_file_path):
+        print(f"saving user expense: {expense} to {expense_file_path}")
+        with open(expense_file_path, "a") as f:
+              f.write(f"{expense.name}, {expense.amount}, {expense.category}\n")
+              
+
+
+
 def summarize_expense(expense_file_path):
-        pass
+        expenses = []
+        with open(expense_file_path, "r") as f:
+             new_lines =  f.readlines()
+             for line in new_lines():
+                   print(line)
+        #            expense_name,expense_amount,expense_category = line.sptrip().split(",")
+        #            line_expense =Expense(name = expense_name, amount=float(expense_amount), category=expense_category)
+        #            print(line_expense)
+        #            expenses.append(line_expense)
+        # print(expenses)
 
 
 
