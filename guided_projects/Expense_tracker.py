@@ -1,7 +1,11 @@
+from typing import List
 from expense import Expense
+import calendar
+import datetime
 
 
 def main():
+    budget  = 2000
 
     expense_file_path = "expenses.csv"
 
@@ -10,7 +14,7 @@ def main():
 
     save_user_expense(expense, expense_file_path)
 
-    summarize_expense(expense_file_path)
+    summarize_expense(expense_file_path, budget)
 
 
 
@@ -55,17 +59,37 @@ def save_user_expense(expense:Expense ,expense_file_path):
 
 
 
-def summarize_expense(expense_file_path):
-        expenses = []
+def summarize_expense(expense_file_path,budget):
+        expenses : List[Expense]= []
         with open(expense_file_path, "r") as f:
-             new_lines =  f.readlines()
-             for line in new_lines():
-                   print(line)
-        #            expense_name,expense_amount,expense_category = line.sptrip().split(",")
-        #            line_expense =Expense(name = expense_name, amount=float(expense_amount), category=expense_category)
-        #            print(line_expense)
-        #            expenses.append(line_expense)
-        # print(expenses)
+              for line in f:
+                    name, amount, category = line.strip().split(",")
+                    print(name, amount, category)
+                    expenses.append(Expense(name=name, amount=float(amount), category=category))
+        amount_by_category = {}
+        for expense in expenses:
+              key = expense.category
+              if key in amount_by_category:
+                    amount_by_category[key] += expense.amount
+              else:
+                    amount_by_category[key]  = expense.amount
+        print("Expenses by Category")
+        for key, amount in amount_by_category.items():
+              print(f" {key} : $ {amount:.2f}")
+
+        total_spent = sum([ex.amount for ex in expenses])
+        print(f"You've spent ${total_spent:.2f} this month!")
+
+        remaining_budget = budget - total_spent
+        print(f"budget Remaining ${remaining_budget:.2f} this month!")
+
+        now = datetime.datetime.now()
+        days_in_month = calendar.monthrange(now.year, now.month)[1]
+        remaining_days = days_in_month - now.day
+
+        daily_budget = remaining_budget / remaining_days
+        print(f"budget per day: ${daily_budget:.2f}")
+        
 
 
 
