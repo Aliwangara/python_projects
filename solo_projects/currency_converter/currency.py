@@ -13,11 +13,11 @@ new_data = data.get('conversion_rates').keys()
 print("We have these currencies available: ") 
 formatted_data = tuple(new_data)
 
-print (formatted_data)
+print (data)
 
 
-# def main():
-#     currency()
+# # def main():
+# #     currency()
 
 
 # def currency():
