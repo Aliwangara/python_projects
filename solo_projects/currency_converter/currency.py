@@ -1,10 +1,20 @@
 from currency_class import Currency as c
+import requests as r
 
 
-currency_api_key =  "https://app.exchangerate-api.com/activate/7d6a41c18e9c48ee4eb7c67f18"
+currency_api_key =  "ec255ab3e019e552750c39e7"
 
-url = f"https://v6.exchangerate-api.com/v6/{currency_api_key}/latest/"
-print(url)
+url = f'https://v6.exchangerate-api.com/v6/{currency_api_key}/latest/USD'
+
+response = r.get(url)
+data = response.json()
+new_data = data.get('conversion_rates').keys()
+# print(data)
+print("We have these currencies available: ") 
+formatted_data = tuple(new_data)
+
+print (formatted_data)
+
 
 # def main():
 #     currency()
@@ -15,7 +25,11 @@ print(url)
 #     source_currency = input("Enter The currency you have now eg(USD, KSH): ")
 #     target_currency  = input("Which currency are you changing to: ")
 
+#     if source_currency and target_currency in 
+
+    
+
 
 # if __name__ =="__main__":
-    # main()
+#     main()
 
