@@ -5,7 +5,7 @@ import datetime
 
 
 def main():
-    budget  = 2000
+    budget  = 2000 
 
     expense_file_path = "expenses.csv"
 
