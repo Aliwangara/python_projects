@@ -84,10 +84,10 @@ for i,  number in enumerate(n):
         print(f"{number} +", end=" ")
     else:
         print(f"{number}", end=" ")
-print(total)
 
 
-for num in range(1,101):
+
+for num in range(1,11):
    n_multiple = int(n)
    n_multiple *= num
    print(n_multiple)
