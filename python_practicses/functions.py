@@ -78,14 +78,59 @@
         
 # sum_of_digits()
 
-def multiplication_table(n = input("Enter a number: ")):
-    for i in range(1,11):
-         new = int(n)
-         new*=i
-         print(new)
-multiplication_table()
+# def multiplication_table(n = input("Enter a number: ")):
+#     for i in range(1,11):
+#          new = int(n)
+#          new*=i
+#          print(new)
+# multiplication_table()
 
+# Write a function square(num) that returns the square of a number.
+# Example: square(4) → 16
 
+# Write a function is_even(num) that returns True if the number is even, otherwise False.
 
+# Write a function factorial(n) that calculates the factorial of n using a loop
 
+# def square(num):
+#     return print(num **num)
+# square(10)
+
+# def is_even(num):
+#     if num%2 == 0:
+#         print("Even")
+#     else:
+#         print("Odd")
+# is_even(9)
+
+# def factorial(n):
+
+#     fact = 1
+#     for i in range(1, n+1):
+#         fact *=i
+#     print(fact)
+# factorial(5)
+
+# Write a function power(base, exp=2) that calculates powers (defaults to square).
+
+# Example: power(3) → 9, power(2, 3) → 8.
+
+# Write a function stats(a, b) that returns sum, difference, product, and quotient.
+
+# Write a function bio(name, age, country="Kenya") that prints "I am NAME, AGE years old, from COUNTRY."
+
+# def power(base, exp=2):
+#     print (base ** exp)
+# power(2)
+
+# def stats(a, b):
+#     print(a+b)
+#     print(a-b)
+#     print(a*b)
+#     print(a**b)
+# stats(5,4)
+
+def  bio(name, age, country="Kenya"):
+    print(f"I am {name}, {age} Years Old. From {country}")
+bio("Ali", 21)
 
