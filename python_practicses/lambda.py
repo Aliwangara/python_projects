@@ -98,6 +98,45 @@ closest_to_ten = min(nums, key=lambda c:abs(value -c))
 print(closest_to_ten)
 
 
+# Challenge 1 — Sort by Last Name Length
+
+# You have a list of full names:
+
+people = ["Ali Mohamed", "Sara Wanjiku", "John Doe", "Elizabeth Bennet", "Chris P. Bacon"]
+
+
+# 👉 Task: Use sorted(..., key=lambda ...) to sort people by the length of their last name.
+# (Hint: name.split()[-1] gives the last name)
+
+
+sort_by_legnth = sorted(people, key=lambda p:p.split(' ')[-1])
+print(sort_by_legnth)
+
+
+# Challenge 2 — Student Grades Dictionary
+
+# You have:
+
+students_dict = {
+    "Ali": [85, 90, 78],
+    "Sara": [92, 88, 95],
+    "John": [75, 80, 72],
+    "Mary": [60, 65, 58]
+}
+
+
+# 👉 Task: Find the student with the highest average score using max(..., key=lambda ...).
+
+max_student = max(students_dict, key=lambda s:sum(students_dict[s])/ len(students_dict[s]))
+print(max_student)
+
+
+
+
+
+
+
+
 
 
 
