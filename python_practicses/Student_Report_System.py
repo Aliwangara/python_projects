@@ -52,9 +52,51 @@ def add_student():
     students.append(student_info)
 
 
-add_student()
+
 
 def view_all_students():
    for student in students:
-    print(f"{student["name"]}'s scores are {student["score"]} with an average of {sum(student["score"]) / len(student["score"])}")
-view_all_students()
+    print(f"{student["name"]}'s scores are {student["score"]} with an average of {sum(student["score"]) / len(student["score"]):.2f}")
+
+
+def search_students():
+   name_search = input("Enter name of the student:   ").lower()
+   for student in students:
+      if name_search in student['name']:
+         print(f"{name_search}'s score is {student['score']}, with an average of {sum(student["score"]) / len(student["score"])} ")
+      else:
+         print(f"{name_search} not in list")
+
+
+def top_student():
+   
+   highest_score = sorted(students,key=lambda x:sum(x['score'])/len(x['score']))
+   print(f" score {highest_score}")
+   
+   
+
+
+
+while True:
+   print("1. ADD STUDENT")
+   print("2. VIEW ALL STUDENTS")
+   print("3. SEARCH STUDENT")
+   print("4. TOP STUDENT")
+   print("5. Exit")
+
+   user_option = input("Enter an option from the ones above (1-4):   ")
+
+   if user_option == "1":
+      add_student()
+   elif user_option == "2":
+      view_all_students()
+   elif user_option == "3":
+      search_students()
+   elif user_option == "4":
+      top_student()
+   elif user_option == "5":
+      print("Thank you!!")
+      break
+   else:
+      print("Option not available please select options from above")
+      
