@@ -70,8 +70,9 @@ def search_students():
 
 def top_student():
    
-   highest_score = sorted(students,key=lambda x:sum(x['score'])/len(x['score']))
-   print(f" score {highest_score}")
+   highest_score = max(students,key=lambda x:sum(x['score'])/len(x['score']))
+   average = sum(highest_score["score"])/ len(highest_score["score"])
+   print(f" top student{highest_score["name"]} with an average of {average:.2f}")
    
    
 
