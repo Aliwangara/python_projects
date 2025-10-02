@@ -115,6 +115,7 @@ def update_student():
             print("You aren't removing the last score")
          else:
             print("please the correct operation")  
+         print(f"Updated: {student_result_list[student_selection]['name']} Score: {student_result_list[student_selection]['score']}")
       else:
          print("please choose from the options provided above")
    else:
@@ -122,3 +123,10 @@ def update_student():
       
 update_student()
 
+def top_student():
+   
+   first_student = max(student_result_list, key=lambda s: sum(s['score']))
+   print(f"Top Score: {first_student}")
+   
+   
+top_student()
