@@ -58,7 +58,7 @@ def add_Student():
     }
     student_result_list.append(student_info)
     print(student_result_list)
-add_Student() 
+
 
 def view_students():
     if student_result_list:
@@ -66,7 +66,7 @@ def view_students():
         print(f"Name: {student['name']} -> Age: {student['age']} -> Scores: {student['score']}")
     else:
        print("No students added in the list")
-view_students()
+
 
 def update_student():
    for i, student in enumerate(student_result_list,1):
@@ -121,7 +121,7 @@ def update_student():
    else:
       print("Choose number input please from the list")
       
-update_student()
+
 
 def top_student():
    
@@ -129,4 +129,38 @@ def top_student():
    print(f"Top Score: {first_student}")
    
    
-top_student()
+
+
+def sort_students():
+   
+   sort_by_name = sorted(student_result_list, key=lambda s: (s['name'], sum(s['score'])/len(student_result_list)))
+   print(f'Sorted: {sort_by_name}')
+
+
+while True:
+   print("1. add Student")
+   print("2. view students")
+   print("3. update student")
+   print("4. top student")
+   print("5. sort students")
+   print("6. Exit")
+
+   student_input = int(input("Choose a number from the option above:  "))
+
+   if student_input == 1:
+       add_Student()
+   elif student_input ==2:
+      view_students()
+   elif student_input == 3:
+      update_student()
+   elif student_input == 4:
+      top_student()
+   elif student_input ==5:
+      sort_students()
+   elif student_input == 6:
+      print(f"------ Thank You -------")
+      break
+   else:
+      print("please Select the available Inputs")
+    
+    
