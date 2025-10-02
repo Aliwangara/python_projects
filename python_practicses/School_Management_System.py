@@ -110,7 +110,7 @@ def update_student():
          elif score_index == 3 and operation == "-":
             student_result_list[student_selection]['score'][2] -= update_score
          elif remove_las_score == "y":
-             student_result_list.remove(student_result_list[student_selection]['score'][2])
+             student_result_list[student_selection]['score'].pop()
          elif remove_las_score =='n':
             print("You aren't removing the last score")
          else:
@@ -125,7 +125,7 @@ def update_student():
 
 def top_student():
    
-   first_student = max(student_result_list, key=lambda s: sum(s['score']))
+   first_student = max(student_result_list, key=lambda s: sum(s['score']) / len(s['score']))
    print(f"Top Score: {first_student}")
    
    
