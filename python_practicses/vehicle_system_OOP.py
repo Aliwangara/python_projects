@@ -72,7 +72,6 @@ class Vehicle:
         self.update_name(name)
         self.__brand = brand
         self.set_year(year)
-        
     def vehicle_info(self):
         print(f"Name: {self.__name}\nBrand: {self.__brand}\nYOM: {self.__year}")
     def set_year(self,new_year):
@@ -85,5 +84,33 @@ class Vehicle:
     def update_name(self, updated_name):
        self.__name = updated_name
 
-vehicle1 = Vehicle("Mercedes", "A180",2001)
+class Car(Vehicle):
+    def __init__(self, name, brand, year,num_doors):
+      super().__init__(name, brand, year)
+      self.__num_doors = num_doors
+      super().vehicle_info()
+    def show_doors(self):
+      print(f"This vehicle has {self.__num_doors} number of Doors")
+    def vehicle_info(self):
+      super().vehicle_info()
+      print(f"Doors: {self.__num_doors}")
+
+class SportsCar(Car):
+    def __init__(self, name, brand, year, num_doors,top_speed):
+      super().__init__(name, brand, year, num_doors)
+      self.__top_speed = top_speed
+      super().vehicle_info()
+    def show_top_speed(self):   
+      print(f"Speed: {self.__top_speed }")
+
+    def vehicle_info(self):
+     super().vehicle_info()
+     print(f"Speed: {self.__top_speed }")
+
+
+vehicle1 = Vehicle("Lorry", "Mercedes", 2019)
 vehicle1.vehicle_info()
+car1 = Car("Sedan", "Toyota", 2019, 4)
+car1.vehicle_info()
+sports_car1 = SportsCar("Supra", "Toyota", 2019,4,320)
+sports_car1.vehicle_info()
