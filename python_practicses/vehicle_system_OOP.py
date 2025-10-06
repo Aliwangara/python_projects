@@ -88,7 +88,6 @@ class Car(Vehicle):
     def __init__(self, name, brand, year,num_doors):
       super().__init__(name, brand, year)
       self.__num_doors = num_doors
-      super().vehicle_info()
     def show_doors(self):
       print(f"This vehicle has {self.__num_doors} number of Doors")
     def vehicle_info(self):
@@ -99,13 +98,12 @@ class SportsCar(Car):
     def __init__(self, name, brand, year, num_doors,top_speed):
       super().__init__(name, brand, year, num_doors)
       self.__top_speed = top_speed
-      super().vehicle_info()
     def show_top_speed(self):   
       print(f"Speed: {self.__top_speed }")
 
     def vehicle_info(self):
      super().vehicle_info()
-     print(f"Speed: {self.__top_speed }")
+     print(f"Speed: {self.__top_speed }KM/H")
 
 
 vehicle1 = Vehicle("Lorry", "Mercedes", 2019)
