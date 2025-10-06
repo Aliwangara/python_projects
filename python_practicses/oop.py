@@ -76,8 +76,7 @@
 class Car:
     def __init__(self, name, make, yom):
         self.__name = name
-        self.__make = make
-        self.__yom = yom
+        self.set_make(make)
         self.set_yom(yom)
     
     def car_info(self):
