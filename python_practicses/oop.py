@@ -78,6 +78,7 @@ class Car:
         self.__name = name
         self.__make = make
         self.__yom = yom
+        self.set_yom(yom)
     
     def car_info(self):
         print(f"Name: {self.__name}\nMake: {self.__make}\nYear of model: {self.__yom}")
@@ -93,10 +94,28 @@ class Car:
             self.__yom = new_yom
         else:
             print("Invalid Year must be 2000 or newer ")
+    def get_make(self):
+        return self.__make
+    def set_make(self,new_make):
+        if len(new_make) > 3:
+           self.__make = new_make
+        else:
+           print("Invalid make name")
+    
 
-car1 = Car("Lexus", "LX 600", 1990)
-car1.update_name("Toyota")
-# car1.increase_year(2)
+car1 = Car("Lexus", "LX", 1990)
+car1.set_make("Ty")
 car1.car_info()
 
 
+
+
+# A getter and setter for __make.
+
+# Inside the setter, make sure:
+
+# The new make name must be at least 3 characters long,
+
+# Otherwise print "❌ Invalid make name".
+
+    
