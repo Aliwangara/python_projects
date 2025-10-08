@@ -124,6 +124,8 @@ Employee.change_company("NextGen Tech")
 
 
 print("\nEmployees after Change")
+print("="*40)
+print()
 
 for employee in employees:
     employee.employee_info()
