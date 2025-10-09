@@ -50,13 +50,35 @@
 
 students_file = "student.txt"
 
-with open(students_file,"w") as f:
-    f.write("Ali\nWangara\n")
+# with open(students_file,"w") as f:
+#     f.write("Ali\nWangara\n")
  
-with open(students_file,'a') as f:
-    f.write("George")
+# with open(students_file,'a') as f:
+#     f.write("George")
+
+# with open(students_file, 'r') as f:
+#     for i,line in enumerate(f,1):
+#         print(f"{i}. {line.strip()}")
+
+# Ask the user how many new students to add.
+
+# For each, ask for their name.
+
+# Append all names to the file.
+
+# Finally, read and print the updated, numbered list.
+
+student_number = int(input("Enter number of the Students you want to add:   "))
+
+for s in range(student_number):
+    student_name = input("Enter name of the student:    ").lower()
+    with open(students_file, 'a') as f:
+        f.write(f"{student_name}\n")
 
 with open(students_file, 'r') as f:
-    for i,line in enumerate(f,1):
-        print(f"{i}. {line.strip()}")
+    for i, line in enumerate(f,1):
+        print(f"{i}. {line.strip().title()}")
+
+
+
 
