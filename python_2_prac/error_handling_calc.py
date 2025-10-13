@@ -27,32 +27,31 @@
 # Log errors (append mode) like this:
 
 error_file = "error_log.txt"
-
-try:
-    num1 = float(input("Enter first numbe:   "))
-    num2 = float(input("Enter second number:   "))
-    operation = input("Enter values(+,-,/,*):   ")
-    if operation == '+':
-        result = num1 + num2
-    elif operation == '-':
-        result = num1 - num2
-    elif operation == '/':
-        result = num1 / num2
-    elif operation == '*':
-        result = num1 * num2
-    else:
-        result = "Operations Error"
+while True:
+    try:
+        num1 = float(input("Enter first numbe:   "))
+        num2 = float(input("Enter second number:   "))
+        operation = input("Enter values(+,-,/,*):   ")
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '/':
+            result = num1 / num2
+        elif operation == '*':
+            result = num1 * num2
+        else:
+            raise ValueError("Operations Error")
+    except ZeroDivisionError:
+        print("Cant be divided by zero")
         with open(error_file, 'a', newline="") as f:
-            f.write(result)
-except ZeroDivisionError:
-    print("Cant be divided by zero")
-    with open(error_file, 'a', newline="") as f:
-            f.write("Cant be divided by zero")
-except ValueError:
-    print("Value Error")
-    with open(error_file,'a',newline="") as f:
-        f.write("Value Error")
-else:
-    print(f"Result: {result:.2f}")
-finally:
-    print("Thank you for using our calculator")
+                f.write("Cant be divided by zero")
+    except ValueError as e:
+        print("Value Error")
+        with open(error_file,'a',newline="") as f:
+            f.write("Value Error")
+    else:
+        print(f"Result: {result:.2f}")
+    finally:
+        print("Thank you for using our calculator")
+
