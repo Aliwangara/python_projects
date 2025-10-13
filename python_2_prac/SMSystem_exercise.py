@@ -158,7 +158,7 @@ for i in range(count):
 
 
 
-with open(students_info,'a',newline="") as f:
+    with open(students_info,'a',newline="") as f:
       writer = csv.writer(f)
       writer.writerow([student.get_name(),student.get_age(), student.get_score(),
                          student.get_status(), degree_field])
