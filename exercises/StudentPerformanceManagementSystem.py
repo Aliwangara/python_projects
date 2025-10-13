@@ -92,5 +92,43 @@
 # ✅ Also write a report file report.txt summarizing the same information.
 
 
+import csv
+class Student:
 
-class
+    def __init__(self,name,age,score,status):
+        self.__name =name
+        self.__age = age
+        self.__score = score
+        self.__status = status
+    def get_name(self):
+        return self.__name
+    def get_age(self):
+        return self.__age
+    def get_score(self):
+        return self.__score
+    @staticmethod
+    def is_pass(score):
+        return score >= 50
+    def student_info(self):
+        print(f"Name: {self.get_name()}, Age:{self.get_age()}, Score: {self.get_score()}")
+
+students_file = "stds.csv"
+
+with open(students_file,'w',newline="")as f:
+    writer = csv.writer(f)
+    writer.writerow(["Name","Age","Score"])
+
+with open(students_file, 'a',newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Ali",17,80])
+    writer.writerow(["Maria",18,45])
+    writer.writerow(["John",16,70])
+    writer.writerow(["Lina",17,30])
+
+
+try:
+    with open(students_file,'r') as f:
+        reader = csv.DictReader(f)
+        reader_list = list(reader)
+except FileNotFoundError:
+    print("File not found")
