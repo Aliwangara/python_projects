@@ -26,12 +26,14 @@ try:
     elif operation == '/':
        result =  num1 / num2
     else:
-        result = f"Please enter a valid operation"
+        raise ValueError("Invalid operation! Please use +, -, *, or /")
     
 except ZeroDivisionError:
     print("Cant be divided by 0")
 except  ValueError:
     print("Please enter a valid value")
+except ValueError as e:
+    print("⚠️",e)
 else:
     print("Result:", result)
 finally:
