@@ -1,1 +1,1 @@
-Value ErrorValue Error
+Error: Salary must be at least 15000
