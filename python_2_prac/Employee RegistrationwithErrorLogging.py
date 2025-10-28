@@ -40,15 +40,15 @@ while True:
     except EmptyFieldError as e:
        print("Error logged to error_log.txt")
        with open(error_file,'a',newline="") as f:
-          f.write("Name and Department cannot be empty")
+          f.write(f"Error: {e}")
     except InvalidAgeError as e:
        print("Error logged to error_log.txt")
        with open(error_file,'a',newline="") as f:
-          f.write("Age must be between 18 and 65")
+          f.write(f"ERROR: {e}")
     except InvalidSalaryError as e:
        print("Error logged to error_log.txt")
        with open(error_file, 'a',newline="") as f:
-          f.write("Error: Salary must be at least 15000")
+          f.write(f"ERROR: {e}")
     except ValueError:
        print("Enter a valid age and salary")
     else:
