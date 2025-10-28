@@ -59,7 +59,7 @@ while True:
     new_employee = input("Do you want to add a new employee(y or n): ").lower()
 
     if new_employee != 'y':
-       print("Thank you!")
+       print("👋 Exiting system. Goodbye!")
        break
 
 
