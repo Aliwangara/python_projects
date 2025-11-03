@@ -32,17 +32,17 @@ class Student:
 
 
 
-# student_id = input("Enter student Id: ")
-# name = input("Enter Students name: ")
-# score = input("Enter 3 separate marks using a space: ").split()
+student_id = input("Enter student Id: ")
+name = input("Enter Students name: ")
+score = input("Enter 3 separate marks using a space: ").split()
 
-# student = Student(student_id,name,score)
+student = Student(student_id,name,score)
 
-# with open(students_file,'w') as f:
-#     f.write("Id Name  Average Grade\n")
+with open(students_file,'w') as f:
+    f.write("Id Name  Average Grade\n")
 
-# with open(students_file,'a',newline="") as f:
-#     f.write(f"{student.get_id()} {student.get_name()}, {student.calculate_average():.2f}, {student.get_grade()}\n")
+with open(students_file,'a',newline="") as f:
+    f.write(f"{student.get_id()} {student.get_name()}, {student.calculate_average():.2f}, {student.get_grade()}\n")
 
 with open(students_file, 'r') as f:
     print("ID       Name          Average   Grade")
