@@ -48,7 +48,7 @@ Enter 3 scores (store them in a list)
 
 After creating a student, write their:
 ID, Name, Average, Grade
-into a file named "students.txt".
+into a file named "AQQ2".
 
 4. Read and display
 

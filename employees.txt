@@ -1,1 +1,0 @@
-Name: ali, Age: 21, Salary: 50000.0, Department: IT
