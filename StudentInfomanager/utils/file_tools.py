@@ -1,0 +1,1 @@
+from StudentInfomanager import main
