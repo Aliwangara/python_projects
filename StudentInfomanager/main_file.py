@@ -1,9 +1,7 @@
 
 
-
-students_list = []
-
 def student_data():
+    students_list = []
     number_of_students = int(input("Enter number of students you want to add:  "))
 
     for s in range(number_of_students):
@@ -14,13 +12,15 @@ def student_data():
         skills = input("Enter skills separate with comma:  ").strip().split(',')
 
         students_dict = {
-            "name":name,
+            "name":name.title(), 
             "age":age,
             "email":email,
             "github_username":github_username,
             "skills":skills
         }
         students_list.append(students_dict)
-    print(students_list)
-# if __name__ == "main.py":
-student_data()
+    return students_list
+
+
+    
+
