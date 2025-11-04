@@ -1,24 +1,23 @@
-[
-    {
-        "name": "Ali",
+[    {
+        "name": "ali",
         "age": 21,
-        "email": "alig",
-        "github_username": "aligh",
-        "skills": [
-            "js",
-            "java",
-            "py"
-        ]
+        "email": "aliwangara@gmail.com",
+        "github_username": "Aliwangara",
+        "github_name": "Ali wangara",
+        "public_repos": 42,
+        "followers": 0,
+        "profile_url": "https://github.com/Aliwangara",
+        "date_added": "2025-11-04 22:08:30"
     },
     {
-        "name": "Wangara",
-        "age": 22,
-        "email": "wang",
-        "github_username": "gghd",
-        "skills": [
-            "C",
-            "C++",
-            "git"
-        ]
+        "name": "wangara",
+        "age": 23,
+        "email": "wangara@gmail.com",
+        "github_username": "wangara",
+        "github_name": null,
+        "public_repos": 0,
+        "followers": 0,
+        "profile_url": "https://github.com/wangara",
+        "date_added": "2025-11-04 22:09:01"
     }
 ]

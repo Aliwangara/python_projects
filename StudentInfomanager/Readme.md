@@ -89,7 +89,7 @@ main.py → orchestrates everything (user input, display, etc.)
 
 When run, the program should:
 
-Ask for student data.
+Ask for student data. 
 
 Save to JSON.
 

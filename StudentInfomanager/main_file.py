@@ -1,3 +1,7 @@
+import datetime
+from StudentInfomanager.students import Student
+from StudentInfomanager.utils.file_tools import save_to_json,load_from_json
+from StudentInfomanager.utils.github_tools import github_data
 
 
 def student_data():
@@ -11,15 +15,24 @@ def student_data():
         github_username = input(f"Enter {name}'s github username:   ")
         skills = input("Enter skills separate with comma:  ").strip().split(',')
 
-        students_dict = {
-            "name":name.title(), 
-            "age":age,
-            "email":email,
-            "github_username":github_username,
-            "skills":skills
-        }
-        students_list.append(students_dict)
-    return students_list
+        student = Student(name,age,email,skills,github_username)
+
+        github_info = github_data(github_username)
+
+        if github_info:
+            student_data = student.to_dict()
+            student_data.update(github_info)
+        else:
+            print(f"⚠️ Could not fetch GitHub info for {github_username}")
+            student_data = student.to_dict()
+
+        student_data["date_added"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        students_list.append(student_data)
+    save_to_json(students_list)
+
+student_data()
+        
+       
 
 
     
