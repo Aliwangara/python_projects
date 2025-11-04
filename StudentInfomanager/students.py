@@ -1,4 +1,4 @@
-
+import json
 
 class Student:
     def __init__(self,name,age,email,github_username):
@@ -15,3 +15,16 @@ class Student:
         return self.__email
     def get_github_username(self):
         return self.__github_username
+    
+    def display_info(self):
+        print(f"Name: {self.__name}\nAge: {self.__age}\nEmail: {self.__email}\nGithub Username: {self.__github_username}")
+
+    def to_dict(self):
+        student_dict = {
+            "name": self.__name,
+            "age": self.__age,
+            "email": self.__email,
+            "github_username": self.__github_username
+
+        }
+        return student_dict
